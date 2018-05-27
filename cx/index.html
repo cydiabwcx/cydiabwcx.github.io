@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="/cydiabwcx/static/plugins/query/amazeui.css" />
+<link rel="stylesheet" href="/cydiabwcx/static/plugins/query/common.min.css" />
+<link rel="stylesheet" href="/cydiabwcx/static/plugins/query/index.min.css" />
+<link href="/cydiabwcx/static/plugins/query/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="/cydiabwcx/static/plugins/query/amazeui.min.css">
+<link href="/cydiabwcx/static/plugins/query/jquery-confirm.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/cydiabwcx/static/plugins/query/public.css">
+<title>验证码查询</title>
+</head>
+<body>
+
+  <!--===========layout-container================-->
+  <div class="layout-container">
+    <div class="index-page">
+      <div data-am-widget="tabs" class="am-tabs am-tabs-default">
+        <div class="am-tabs-bd">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" style="padding: 10px 0 !important;">
+    <div class="container">
+      <!--index-container start-->
+
+      <!--index-container end-->
+    </div>
+  </div>
+
+
+  <!-- 开始 -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-heading"> 验证码查询系统</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+            </select>
+			<input style="margin-top: 20px;" type="text" id="token" class="form-control"
+              placeholder="请在此输入授权码" />
+            <button id="selectToken" type="button" style="margin-top: 20px;"
+              class="btn btn-lg btn-primary btn-block">授权查询</button>
+			  <br>
+               </form>
+                 </div>
+                 </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 结束 -->
+  
+<div align="center">
+<table border="0" width="29%" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<!--<p align="center"><a href="/FL/web/front/code/deb/QQ飞龙v1.0.deb"><button style="margin-top: 20px;" class="btn btn-lg btn-primary btn-block">QQ飞龙 (在线安装)</button></a>
+<a href="/FL/web/front/code/deb/AppleFileConduit2.deb"><button style="margin-top: 20px;" class="btn btn-lg btn-primary btn-block">Apple File Conduit "2" (必装插件)</button></a>
+<a href="/FL/web/front/code/deb/AppSyncUnified.deb"><button style="margin-top: 20px;" class="btn btn-lg btn-primary btn-block">AppSync Unified (必装插件)</button></a>
+<a href="/FL/web/front/code/deb/AppList.deb"><button style="margin-top: 20px;" class="btn btn-lg btn-primary btn-block">AppList (必装插件)</button></a>
+<a href="/FL/web/front/code/deb/RocketBootstrap.deb"><button style="margin-top: 20px;" class="btn btn-lg btn-primary btn-block">RocketBootstrap (必装插件)</button></a>
+<a href="/FL/web/front/code/deb/PreferenceLoader.deb"><button style="margin-top: 20px;" class="btn btn-lg btn-primary btn-block">PreferenceLoader (设置插件显示)</button></a>
+<a href="/FL/web/front/code/deb/IOS8分屏.deb"><button style="margin-top: 20px;" class="btn btn-lg btn-primary btn-block">IOS8系统分屏 (必备插件)</button></a>
+<a href="/FL/web/front/code/deb/IOS9-10分屏.deb"><button style="margin-top: 20px;" class="btn btn-lg btn-primary btn-block">IOS9/IOS10系统分屏 (必备插件)</button></a>
+<a href="/FL/web/front/code/deb/SpeedIntensifier.deb"><button style="margin-top: 20px;" class="btn btn-lg btn-primary btn-block">Speed Intensifier 手机加速器 (可选插件)</button></a>
+<a href="/FL/web/front/code/deb/NoBlur全局透明.deb"><button style="margin-top: 20px;" class="btn btn-lg btn-primary btn-block">NoBlur 全局透明 (可选插件)</button></a>
+</td>-->
+</tr>
+</table>
+</div>
+  
+
+  <div id="webjx" align="center"><script>setInterval("webjx.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);</script>
+  
+  <script src="/cydiabwcx/static/plugins/query/jquery-2.1.0.js" charset="utf-8"></script>
+  <script src="/cydiabwcx/static/plugins/query/amazeui.js" charset="utf-8"></script>
+  <script src="/cydiabwcx/static/plugins/query/common.js" charset="utf-8"></script>
+  <!--[if (gte IE 9)|!(IE)]><!-->
+
+  <script src="http://cdn.bootcss.com/jquery/3.0.0-rc1/jquery.js"></script>
+  <!--<![endif]-->
+  <!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="http://oi9imxtgb.bkt.clouddn.com/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+  <script src="/cydiabwcx/static/plugins/query/amazeui.min.js"></script>
+  <script src="/cydiabwcx/static/plugins/query/public.js"></script>
+  <script src="/cydiabwcx/static/plugins/query/jquery-confirm.min.js"></script>
+
+  <script type="text/javascript">
+	$("#selectToken").click(function(){
+		var url = window.location.href;
+		var token = $("#token").val();
+		$.post("/cydiabwcx/controller/api/code.php?m=query",
+		{auth_code:token}
+		,function(resp){
+	    //console.log(resp);
+			if(resp.result){
+				$.dialog({
+					title: '提示',
+					content: resp.data,
+				});
+			} else {
+				$.dialog({
+					title: '提示',
+					content: resp.msg,
+				});
+	      }
+		});
+	});
+	</script>
+</body>
+
+</html>

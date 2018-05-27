@@ -104,7 +104,7 @@
 	$("#selectToken").click(function(){
 		var url = window.location.href;
 		var token = $("#token").val();
-		$.post("/CX/controller/api/code.php?m=query",
+		$.post("http://slm.xcore.cc/cydiabwcx/controller/api/code.php?m=query",
 		{auth_code:token}
 		,function(resp){
 	    //console.log(resp);

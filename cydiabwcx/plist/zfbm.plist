@@ -11,7 +11,7 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://ipa.httg.top/ipa/秒.ipa</string>
+					<string>http://ipa.httg.top/ipa/zfbm.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -19,15 +19,15 @@
 					<key>needs-shine</key>
 					<true/>
 					<key>url</key>
-					<string>https://pic.86sb.com/uploads/Brand_a/sb25338795_4.jpg</string>
+					<string>https://ipa.httg.top/png/fs.jpg</string>
 				</dict>
 			</array>
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>包名（Bundle ID）</string>
+				<string>com.cydiabwcx.zfbm</string>
 				<key>bundle-version</key>
-				<string>版本号，如1.0</string>
+				<string>1.0</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>subtitle</key>

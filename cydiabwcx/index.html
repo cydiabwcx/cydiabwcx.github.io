@@ -1,978 +1,591 @@
 <!DOCTYPE html>
-<!-- -->
-<html class="js cssanimations"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ CydiaBwcx 梦幻世界 ✨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport">
-<title>CydiaBwcx</title>
-<meta name="renderer" content="webkit">
-<link rel="stylesheet" href="index_files/amazeui.min.css">
-<link rel="stylesheet" href="index_files/amazeui.swiper.min.css">
-<link rel="stylesheet" href="index_files/app.css">
+        body {
+            font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+            background: linear-gradient(45deg, #ff6b9d, #c44569, #6c5ce7, #a29bfe, #fd79a8, #e84393);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-<style>
-#login_click{ margin-top:32px; height:40px;}
-#login_click a 
-{
-    
-    text-decoration:none;
-	background:#2f435e;
-	color:#f2f2f2;
-	
-	padding: 10px 30px 10px 30px;
-	font-size:16px;
-	font-family: 微软雅黑,宋体,Arial,Helvetica,Verdana,sans-serif;
-	font-weight:bold;
-	border-radius:3px;
-	
-	-webkit-transition:all linear 0.30s;
-	-moz-transition:all linear 0.30s;
-	transition:all linear 0.30s;
-	
-	}
-   #login_click a:hover { background:#385f9e; }
- 
+        /* 梦幻背景动画 */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-</style>
-</head><body>
-<div class="h-banner am-text-center">
-	<img src="index_files/banner.jpg">
- <span style="display:none;"><i class="fas fa-users"></i> &nbsp; null</span>
-                <span style="display:none;"><i class="fas fa-envelope"></i> &nbsp; null</span>
-                <span style="display:block;"><i class="fas fa-link"></i> &nbsp; <a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://apt.r7b.cn/">添加Cydia源</a></span>
-                  <span style="display:block;"><i class="fas fa-link"></i> &nbsp; <a href="sileo://source/https://apt.r7b.cn/">添加sileo源</a></span>
-                <span style="display:none;"><i class="fas fa-user-tie"></i> &nbsp;&nbsp; Available for hire</span>
-                <div class="socials">
-<div class="h-main">
-	<div class="tips am-padding-xs">
-		<p><marquee behavior="" direction="">仅供交流学习使用 软件使用责任自行承担，2024，10，13号更新</marquee></p>
-	</div>
- 
-			
-		</p></div>
-	<div class="h-content">
-		<div class="am-tabs" id="doc-my-tabs">
-			<ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
-				<li class="am-active">
-					<a href="index.html">越狱专区</a>
-				</li>
+        /* 浮动粒子背景 */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
 
-				<li>
-					<a href="index.html">双号分身</a>
-				</li>
-				<li>
-					<a href="index.html">机器人类</a>
-				</li>
-				<li>
-					<a href="index.html">钉钉系列</a>
-				</li>
-				<li>
-					<a href="index.html">支付宝类</a>
-				</li>
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: float 6s infinite linear;
+        }
 
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
 
-				<li>
-					<a href="index.html">企业系列</a>
+        /* 主容器 */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+        }
 
-			</ul>
-			<div class="am-tabs-bd list" style="touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
-				<div class="am-tab-panel am-active">
-					<ul class="am-list">
-						<!-- 第一个 -->
-						<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>全功能展示图 <span>双号系列</span></h3>
-								<p>全功能展示图-双号系列</p>
-								<p><a href="javascript:;" data-am-modal="{}"></a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-						
-								<a href="/zs" class="am-btn am-btn-danger am-btn-xs">查看</a>
-					 <!-- 第一个 -->
-														<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>ipad扫码登录插件 <span>越狱系列</span></h3>
-								<p>部分低系统无法登陆历史版本微信，又安装8.0.49版本分身闪退的，可以安装个ipad扫码登录插件，打开微信扫码登录，扫码后不要点登陆，点取消，然后再账号密码登陆，低版本就可以上去了</p>
-								<p><a href="javascript:;" data-am-modal="{}"></a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-						
-								<a href="./deb/ipad.deb" class="am-btn am-btn-danger am-btn-xs">下载</a>
-									 <!-- 第一个 -->
-								<!-- 	<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/qq.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>QQ云端秒 <span>云端系列</span></h3>
-								<p>QQ秒 全新云秒震撼来袭 独家双协议选择登录 独家多线路服务器登录 </p>
-								<p><a href="javascript:;" data-am-modal="{}"></a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-						
-								<a href="http://yd.r7b.cn/" class="am-btn am-btn-danger am-btn-xs">进入</a>-->
-					 <!-- 第一个 -->
-						<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/yueyu.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>越狱合集 <span>越狱工具</span></h3>
-								<p>越狱工具</p>
-								<p><a href="javascript:;" data-am-modal="{}"></a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-						
-								<a href="https://apt.r7b.cn/yueyu/" class="am-btn am-btn-danger am-btn-xs">下载</a>
-					 
-									<!-- <div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>双号多开 <span>越狱</span></h3>
-								<p>双号专用 安装appsync关闭签名插件 如提示低版本 先用登录1号过低版本 覆盖1号安装使用 解决大部分封号问题 修复适配问题 已兼容站内全部双号  </p>
-								<p><a href="javascript:;" data-am-modal="{}"> 已更新至4开</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://pan.r7b.cn/分身" class="am-btn am-btn-danger am-btn-xs">下载</a>
-								<a href="https://pan.r7b.cn/8.023" class="am-btn am-btn-danger am-btn-xs">8.023</a>
-           						</li><li>
-               						 <div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>转发系列 <span>越狱</span></h3>
-								<p>强大的微商营销工具，微商必备，内附各种强大功能</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-								<a href="https://wx.httg.top/" class="am-btn am-btn-danger am-btn-xs">进入</a>-->
-											   
-						</li><li>           						 
-						<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="http://ss.httg.top/cydiabwcx/图标/tj.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>太极埋雷转包 <span>越狱</span></h3>
-								<p>发包埋雷，分析导入埋雷数据，有转包功能，是否可用自行测试</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://m.miaopai.com/show/channel/8BMpG7SJ-cDYhgQbEb1mZrX-ivHaTHVFy0tqCw__?UniversalLinks=callback" class="am-btn am-btn-primary am-btn-xs">视频</a>
-								<a href="http://ss.httg.top/cydiabwcx/deb/tjml.deb" class="am-btn am-btn-danger am-btn-xs">下载</a>
-							</div>	
-							 <li>
-							
-						<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="http://ss.httg.top/cydiabwcx/图标/lqbz.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>雷群霸主 <span>越狱</span></h3>
-								<p>豹子半截图，修改红包金额，发包埋雷，分析导入埋雷数据</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://m.miaopai.com/show/channel/8BMpG7SJ-cDYhgQbEb1mZrX-ivHaTHVFy0tqCw__?UniversalLinks=callback" class="am-btn am-btn-primary am-btn-xs">视频</a>
-								<a href="http://ss.httg.top/cydiabwcx/deb/lqbz.deb" class="am-btn am-btn-danger am-btn-xs">下载</a>
-							</div>	
-					    </li><li>
-						 <div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/wuming.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>无名9.99私用  <span>越狱</span></h3>
-								<p>重磅归来，不限制系统</p>
-								<p><a href="javascript:;" data-am-modal="{target: &#39;#popup-chiji&#39;}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://m.miaopai.com/show/channel/8BMpG7SJ-cDYhgQbEb1mZrX-ivHaTHVFy0tqCw__?UniversalLinks=callback" class="am-btn am-btn-primary am-btn-xs">视频</a>
-								<a href="http://wm.r7b.cn:8/deb/无名.deb" class="am-btn am-btn-danger am-btn-xs">无名999极速版</a>
-								
-							</div>	
-					    </li><li>
-					  <div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/bbg.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>新-包包干3.0极速版(内置防封) <span>越狱</span></h3>
-								<p>修复13系统闪退，更新主微信支持高版本，分身也支持测试8.02版本没问题，据说支持到8.027需自行测试</p>
-								<p><a href="javascript:;" data-am-modal="{target: &#39;#popup-chiji&#39;}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://m.miaopai.com/show/channel/8BMpG7SJ-cDYhgQbEb1mZrX-ivHaTHVFy0tqCw__?UniversalLinks=callback" class="am-btn am-btn-primary am-btn-xs">视频</a>
-								<a href="http://bb.r7b.cn:8/deb/3.0极速版.deb" class="am-btn am-btn-danger am-btn-xs">支持13系统</a>
-								<a href="http://bb.r7b.cn:8/deb/新包包干高版本.deb" class="am-btn am-btn-danger am-btn-xs">主微信支持高版本</a>
-								<a href="http://bb.r7b.cn:8/deb/3.0纯净版.deb" class="am-btn am-btn-danger am-btn-xs">不支持13系统</a>
-							</div>
-					    </li><li>
-						<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/bfx.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>风行·蝙蝠侠4.0 <span>越狱</span></h3>
-								<p>10系统以上必须使用u盘越狱</p>
-								<p><a href="javascript:;" data-am-modal="{target: &#39;#popup-chiji&#39;}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://m.miaopai.com/show/channel/8BMpG7SJ-cDYhgQbEb1mZrX-ivHaTHVFy0tqCw__?UniversalLinks=callback" class="am-btn am-btn-primary am-btn-xs">视频</a>
-								<a href="http://bfx.bb.r7b.cn:8/deb/风行.deb" class="am-btn am-btn-danger am-btn-xs">下载</a>
-							</div>
-					    </li><li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/ck.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>刺客9.0 <span>越狱</span></h3>
-								<p>仅支持Checkra1n越狱</p>
-								<p><a href="javascript:;" data-am-modal="{target: &#39;#popup-chiji&#39;}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="1" class="am-btn am-btn-primary am-btn-xs">视频</a>
-								<a href="http://ck.bb.r7b.cn:8/deb/ck.deb" class="am-btn am-btn-danger am-btn-xs">下载</a>
-							</div>	
-					    </li><li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/jys.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>征服者蝙蝠侠 <span>越狱</span></h3>
-								<p>老款品牌，值得信赖</p>
-								<p><a href="javascript:;" data-am-modal="{target: &#39;#popup-chiji&#39;}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://m.miaopai.com/show/channel/8BMpG7SJ-cDYhgQbEb1mZrX-ivHaTHVFy0tqCw__?UniversalLinks=callback" class="am-btn am-btn-primary am-btn-xs">视频</a>
-								<a href="http://zfz.r7b.cn:8/deb/zfz.deb" class="am-btn am-btn-danger am-btn-xs">下载</a>
-							</div>	
-					    </li><li>
-					        	<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/sqnx.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>神࿆奇࿆女࿆侠࿆-传࿆奇࿆版࿆ <span>越狱</span></h3>
-								<p>重磅归来，不限制系统</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://m.miaopai.com/show/channel/8BMpG7SJ-cDYhgQbEb1mZrX-ivHaTHVFy0tqCw__?UniversalLinks=callback" class="am-btn am-btn-primary am-btn-xs">视频</a>
-								<a href="http://sqnx.r7b.cn:8/deb/nx.deb" class="am-btn am-btn-danger am-btn-xs">下载</a>
+        /* 标题区域 */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease-out;
+        }
 
-							</div>
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
 
-					    <li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/fhl.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>风火轮2.5 <span>越狱</span></h3>
-								<p>微信版本用7.09版本，无需u盘越狱，un越狱也可以</p>
-								<p><a href="javascript:;" data-am-modal="{target: &#39;#popup-chiji&#39;}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="http://fhl.r7b.cn:8/deb/风火轮支持所有系统.deb" class="am-btn am-btn-danger am-btn-xs">支持所有系统</a>
-								<a href="http://fhl.r7b.cn:8/deb/风火轮纯净版.deb" class="am-btn am-btn-danger am-btn-xs">不支持13系统</a>
-					  <!--  </div>
-	               </ul>	
-				</div>
-				<div class="am-tab-panel">
-					<ul class="am-list">
-						免越狱 		
-						<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>CydiaBwcx助手<span>免授权</span></h3>
-								<p>源码源包编译，适配8.013版本微信，内附锁屏抢红包功能，好友关系检测，消息防撤回，修改运动步数，小游戏作弊，朋友圈转发，朋友圈集赞，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="itms-services://?action=download-manifest&url=https://pan.r7b.cn/i/aHR0cHM6Ly9wYW4uY3lkaWFid2N4LmNjL2QvJUU3JUE2JThGJUU1JTg4JUE5L2N5ZGlhYndjeC5pcGE-/ipa.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-								</div>
-						<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>摩天轮<span>免授权</span></h3>
-								<p>微信版本8.018版本，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid，安装打开如果提示输入验证，任意输入回车后马上点登陆，然后登陆上去划后台后如果提示验证失败，再重新划后台打开即可，出现小编的弹窗即可，第一次登陆需要卡进去，后面出现提示直接划后台即可如果不明白可以看看视频教程</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://cs.httg.top/mtl/mtl.mp4" class="am-btn am-btn-primary am-btn-xs">视频教程</a>
-								<a href="itms-services://?action=download-manifest&url=https://pan.r7b.cn/i/aHR0cHM6Ly9wYW4uY3lkaWFid2N4LmNjL2QvJUU3JUE2JThGJUU1JTg4JUE5L210bC5pcGE-/ipa.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-								</div>
-						<li>
-					<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>独角兽2.0<span>免授权</span></h3>
-								<p>微信版本8.018版本，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid，安装打开会提示验证中，然后会转圈，等他验证完，转完圈后再点确认，否则破解不成功，如果手快提前点了确认，弹出安装防封模块切记不要安装，划掉后台重新打开等他验证完成再确认即可</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="itms-services://?action=download-manifest&url=https://pan.r7b.cn/i/aHR0cHM6Ly9wYW4uY3lkaWFid2N4LmNjL2QvJUU3JUE2JThGJUU1JTg4JUE5L2Rqcy5pcGE-/ipa.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-								</div>
-						<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>微信全能 <span>越狱</span></h3>
-								<p>微信版本8.015版本，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: &#39;#popup-chiji&#39;}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="itms-services://?action=download-manifest&url=https://pan.r7b.cn/i/aHR0cHM6Ly9wYW4uY3lkaWFid2N4LmNjL2QvJUU3JUE2JThGJUU1JTg4JUE5L3d4cW4uaXBh/ipa.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-					    </div></li><li>							
-						
-						<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>时空微商 <span>越狱</span></h3>
-								<p>微信版本8.05版本，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: &#39;#popup-chiji&#39;}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="itms-services://?action=download-manifest&url=https://pan.r7b.cn/i/aHR0cHM6Ly9wYW4uY3lkaWFid2N4LmNjL2QvJUU3JUE2JThGJUU1JTg4JUE5L3Nrd3MuaXBh/ipa.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-					    </div></li><li>							
-						<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>云微 <span>免授权</span></h3>
-								<p>微信版本8.0.10版本，云微包本身不支持越狱，需要清除越狱环境自签udid方能使用</p>
-								<p><a href="javascript:;" data-am-modal="{target: &#39;#popup-chiji&#39;}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="itms-services://?action=download-manifest&amp;url=https://ipa.cydiabwcx.cc/plist/yw.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-					    </div></li><li>						
-						<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/qy.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>企业秒 <span>免授权</span></h3>
-								<p>越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: &#39;#popup-chiji&#39;}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="itms-services://?action=download-manifest&url=https://pan.r7b.cn/i/aHR0cHM6Ly9wYW4uY3lkaWFid2N4LmNjL2QvJUU3JUE2JThGJUU1JTg4JUE5L3F5LmlwYQ--/ipa.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-					    </div></li><li>						
-						<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/fls.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>福利社 <span>无限看片</span></h3>
-								<p>越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: &#39;#popup-chiji&#39;}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="itms-services://?action=download-manifest&url=https://pan.r7b.cn/i/aHR0cHM6Ly9wYW4uY3lkaWFid2N4LmNjL2QvJUU3JUE2JThGJUU1JTg4JUE5L2Zscy5pcGE-/ipa.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>-->
-					</div>
-	               </ul>	
-				</div>
-				<div class="am-tab-panel">
-					<ul class="am-list">
-						<!-- 免越狱 -->	
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+            to { text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 182, 193, 0.8); }
+        }
 
-					<li>
-								<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>备用安装地址<span>越狱</span></h3>
-								<p>双号专用 安装appsync关闭签名插件</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="http://ipa.qisi67.cn/" class="am-btn am-btn-danger am-btn-xs">进入</a>
-						</div>
-					<li><!--
-								<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>双号分身<span>越狱</span></h3>
-								<p>双号专用 安装appsync关闭签名插件，解决低版本方法，先安装8.0.2的版本微信1开，安装功把号登陆上去之后，直接在去安装7.0.9的版本微信1号，安装功了 会合并在一起，显示的是微信1号，这时候在重新登陆刚才那个号，就可以上去7.0.9的版本了，后面在需要多开就这样子的方法去作，1开覆盖1号/2开覆盖2号，按照这样子的流程去作即可！ 解决大部分封号问题 修复适配问题 已兼容站内全部双号</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://pan.r7b.cn/%E5%88%86%E8%BA%AB/%E5%88%86%E8%BA%AB%E7%99%BB%E9%99%861.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.2 1</a>
-								<a href="https://pan.r7b.cn/%E5%88%86%E8%BA%AB/%E5%88%86%E8%BA%AB%E8%A6%86%E7%9B%961.ipa" class="am-btn am-btn-danger am-btn-xs">7.0.9 1</a>
-								<a href="https://pan.r7b.cn/%E5%88%86%E8%BA%AB/%E5%88%86%E8%BA%AB%E7%99%BB%E9%99%862.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.2 2</a>
-								<a href="https://pan.r7b.cn/%E5%88%86%E8%BA%AB/%E5%88%86%E8%BA%AB%E8%A6%86%E7%9B%962.ipa" class="am-btn am-btn-danger am-btn-xs">7.0.9 2</a>
-								<a href="https://pan.r7b.cn/%E5%88%86%E8%BA%AB/%E5%88%86%E8%BA%AB%E7%99%BB%E9%99%863.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.2 3</a>
-								<a href="https://pan.r7b.cn/%E5%88%86%E8%BA%AB/%E5%88%86%E8%BA%AB%E8%A6%86%E7%9B%963.ipa" class="am-btn am-btn-danger am-btn-xs">7.0.9 3</a>
-								<a href="https://pan.r7b.cn/%E5%88%86%E8%BA%AB/%E5%88%86%E8%BA%AB%E7%99%BB%E9%99%864.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.2 4</a>
-								<a href="https://pan.r7b.cn/%E5%88%86%E8%BA%AB/%E5%88%86%E8%BA%AB%E8%A6%86%E7%9B%964.ipa" class="am-btn am-btn-danger am-btn-xs">7.0.9 4</a>
-						</div>
-						<li>
-								<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>双号分身<span>越狱</span></h3>
-								<p>专用分身8.028，不封号，速度快，安装后需要授权，已知兼容包包干，风火轮，征服者，腾讯更新解决低版本方法第一步先安装定制 8.0.49的版本微信1、2、3、4、5开安装成功把号登陆上去之后再去安装定制 8.0.23的版本微信1号，安装成功了后会合并在一起，显示的是微信1号，这时候在重新登陆刚才那个号，就可以上去 8.0.28的版本了，后面在需要多开就这样子的方法去作，1开覆盖1号/2开覆盖2号，按照这样子的流程去操作即可!</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://pan.r7b.cn/8.023/%E7%99%BB%E5%BD%951_8.0.49.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.49 1</a>
-								<a href="https://pan.r7b.cn/8.028/80281.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.28 1</a>
-								<a href="https://pan.r7b.cn/8.023/%E7%99%BB%E5%BD%952_8.0.49.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.49 2</a>
-								<a href="https://pan.r7b.cn/8.028/80282.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.28 2</a>
-								<a href="https://pan.r7b.cn/8.023/%E7%99%BB%E5%BD%953_8.0.49.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.49 3</a>
-								<a href="https://pan.r7b.cn/8.028/80283.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.28 3</a>
-								<a href="https://pan.r7b.cn/8.023/%E7%99%BB%E5%BD%954_8.0.49.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.49 4</a>
-								<a href="https://pan.r7b.cn/8.028/80284.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.28 4</a>
-								</div>
-						<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>双号分身<span>越狱</span></h3>
-								<p>专用分身8.023，不封号，速度快，安装后需要授权，已知兼容包包干，风火轮，征服者，腾讯更新解决低版本方法第一步先安装定制 8.0.49的版本微信1、2、3、4、5开安装成功把号登陆上去之后再去安装定制 8.0.23的版本微信1号，安装成功了后会合并在一起，显示的是微信1号，这时候在重新登陆刚才那个号，就可以上去 8.0.23的版本了，后面在需要多开就这样子的方法去作，1开覆盖1号/2开覆盖2号，按照这样子的流程去操作即可!</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://pan.r7b.cn/8.023/%E7%99%BB%E5%BD%951_8.0.49.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.49 1</a>
-								<a href="https://pan.r7b.cn/8.023/%E5%BE%AE%E4%BF%A1%E5%88%86%E8%BA%AB1.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.23 1</a>
-								<a href="https://pan.r7b.cn/8.023/%E7%99%BB%E5%BD%952_8.0.49.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.49 2</a>
-								<a href="https://pan.r7b.cn/8.023/%E5%BE%AE%E4%BF%A1%E5%88%86%E8%BA%AB2.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.23 2</a>
-								<a href="https://pan.r7b.cn/8.023/%E7%99%BB%E5%BD%953_8.0.49.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.49 3</a>
-								<a href="https://pan.r7b.cn/8.023/%E5%BE%AE%E4%BF%A1%E5%88%86%E8%BA%AB3.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.23 3</a>
-								<a href="https://pan.r7b.cn/8.023/%E7%99%BB%E5%BD%954_8.0.49.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.49 4</a>
-								<a href="https://pan.r7b.cn/8.023/%E5%BE%AE%E4%BF%A1%E5%88%86%E8%BA%AB4.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.23 4</a>
-								<a href="https://pan.r7b.cn/8.023/%E7%99%BB%E5%BD%955_8.0.49.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.49 5</a>
-								<a href="https://pan.r7b.cn/8.023/%E5%BE%AE%E4%BF%A1%E5%88%86%E8%BA%AB5.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.23 5</a>
-								<a href="https://pan.r7b.cn/8.023/%E7%99%BB%E5%BD%956_8.0.49.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.49 6</a>
-								<a href="https://pan.r7b.cn/8.023/%E5%BE%AE%E4%BF%A1%E5%88%86%E8%BA%AB6.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.23 6</a>   </div>
-						<li>
-								<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>主微信<span>越狱</span></h3>
-								<p>由于降级插件和谐，本站提供主微信8.02登陆版本和7.09覆盖版本</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://pan.r7b.cn/%E5%AE%98%E6%96%B9/wx802.ipa" class="am-btn am-btn-danger am-btn-xs">8.0.2</a>
-								<a href="https://pan.r7b.cn/%E5%AE%98%E6%96%B9/wx709.ipa" class="am-btn am-btn-danger am-btn-xs">7.0.9</a>
-							</div>-->		
+        .subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+        }
 
-	               </ul>	
-				</div>
-				<div class="am-tab-panel">
-					<ul class="am-list">
-						<!-- 机器人 -->		
-						<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/mw.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>默往比门机器人<span>机器人</span></h3>
-								<p>默往比门机器人,越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="itms-services://?action=download-manifest&amp;url=https://ipa.cydiabwcx.cc/plist/mw.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-								</div>
-						<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>微信比门机器人<span>机器人</span></h3>
-								<p>微信机器人支持玩法八包，尾巴牛，暗堡，百家乐，重庆时时彩，北京赛车，踩雷（5包/6包）越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="itms-services://?action=download-manifest&amp;url=https://ipa.cydiabwcx.cc/plist/wxjqr.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-								</div>
-													<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>微信三公机器人<span>机器人</span></h3>
-								<p>微信机器人支持玩法：有庄，无庄 越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="itms-services://?action=download-manifest&amp;url=https://ipa.cydiabwcx.cc/plist/wz.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-								</div>
-		</ul>	
-				</div>
-				<div class="am-tab-panel">
-					<ul class="am-list">
-						<!-- 钉钉 -->		
-						<li>
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/dd.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>钉钉秒<span>秒</span></h3>
-								<p>钉钉秒，最新版本源码源包编译,越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="itms-services://?action=download-manifest&url=https://ipa.cydiabwcx.cc/plist/ddm.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-								</div>
-						<li>
-						  <div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/dd.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>钉钉6k单透<span>一码通</span></h3>
-								<p>支持8 9 10 11 12系统钉钉单透全网首发！仅支持8至12.5越狱系统，12系统推荐使用钉钉6.3.20版本，8-9系统使用4.6.10版本 （一码通哦 ) ⚠️12系统激活不上的下载这个https://apps.apple.com/cn/app/stream/id1312141691 打开抓包后划掉钉钉后台重新激活即可,密码:elqu</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-								<a href="https://cydiabwcx.lanzout.com/b02wkxf9c" class="am-btn am-btn-danger am-btn-xs">6k单透</a>
-							        <a href="http://124.221.165.8/deb/dingding.deb" class="am-btn am-btn-danger am-btn-xs">8，9，10系统</a>
-								   <a href="https://apt.r7b.cn/mp4/dd.mp4" class="am-btn am-btn-danger am-btn-xs">解决请求失败</a>
-							</div>	
-						<li>
-						  <div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/dd.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>钉钉掠夺者单透<span>一码通</span></h3>
-								<p>支持8 9 10 11 12系统钉钉单透全网首发！仅支持8至12.5越狱系统，12系统推荐使用钉钉6.3.20版本，8-9系统使用4.6.10版本 （一码通哦 ) ⚠️12系统激活不上的下载这个https://apps.apple.com/cn/app/stream/id1312141691 打开抓包后划掉钉钉后台重新激活即可,密码:elqu</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-								<a href="https://cydiabwcx.lanzout.com/b02wkxf9c" class="am-btn am-btn-danger am-btn-xs">掠夺者单透</a>
-							        <a href="https://apt.r7b.cn/mp4/dd.mp4" class="am-btn am-btn-danger am-btn-xs">解决请求失败</a>
-							</div>	
-						<li>
-						  <div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/dd.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>钉钉教父单透<span>一码通</span></h3>
-								<p>支持8 9 10 11 12系统钉钉单透全网首发！仅支持8至12.5越狱系统，12系统推荐使用钉钉6.3.20版本，8-9系统使用4.6.10版本 （一码通哦 ) ⚠️12系统激活不上的下载这个https://apps.apple.com/cn/app/stream/id1312141691 打开抓包后划掉钉钉后台重新激活即可,密码:elqu</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-								<a href="https://cydiabwcx.lanzout.com/b02wkxf9c" class="am-btn am-btn-danger am-btn-xs">教父单透</a>
-							        <a href="https://apt.r7b.tcn/mp4/dd.mp4" class="am-btn am-btn-danger am-btn-xs">解决请求失败</a>
-							</div>	
-						<li>
-						  <div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/dd.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>钉钉闪电透单透<span>一码通</span></h3>
-								<p>支持8 9 10 11 12系统钉钉单透全网首发！仅支持8至12.5越狱系统，12系统推荐使用钉钉6.3.20版本，8-9系统使用4.6.10版本 （一码通哦 ) ⚠️12系统激活不上的下载这个https://apps.apple.com/cn/app/stream/id1312141691 打开抓包后划掉钉钉后台重新激活即可,密码:elqu</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-								<a href="https://cydiabwcx.lanzout.com/b02wkxf9c" class="am-btn am-btn-danger am-btn-xs">闪电透单透</a>
-							        <a href="https://apt.r7b.cn/mp4/dd.mp4" class="am-btn am-btn-danger am-btn-xs">解决请求失败</a>
-							</div>	
-				</ul>	
-				</div>
-				<div class="am-tab-panel">
-					<ul class="am-list">
-						<!-- 支付宝 	
-						<li>
-						</li><li>
-								<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/zfb.png">
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>支付宝<span>越狱</span></h3>
-								<p>单透，秒，暗堡</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="itms-services://?action=download-manifest&url=https://ipa.cydiabwcx.cc/plist/zfbm.plist" class="am-btn am-btn-danger am-btn-xs">狮王透</a>
-								<a href="itms-services://?action=download-manifest&url=https://ipa.cydiabwcx.cc/plist/zfbm.plist" class="am-btn am-btn-danger am-btn-xs">狮王秒</a>
-								<a href="itms-services://?action=download-manifest&url=https://ipa.cydiabwcx.cc/plist/hlt.plist" class="am-btn am-btn-danger am-btn-xs">火力透</a>
-								<a href="itms-services://?action=download-manifest&url=https://ipa.cydiabwcx.cc/plist/zfbt.plist" class="am-btn am-btn-danger am-btn-xs">火神透</a>
-								
-					</div>	-->							
-						</li><li>	
-               					 <div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/zfb.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>支付宝转包 <span>定制系列</span></h3>
-								<p>支持快乐十分，百人牛牛，百家乐，需要可联系上家定制udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-								<a href="cydiabwcx" class="am-btn am-btn-danger am-btn-xs">进入</a>
-							</div>					
-					</ul>	
-				</div>
-				<div class="am-tab-panel">
-					<ul class="am-list">
-						<!-- 安卓		
-					<li>
+        /* 横幅图片 */
+        .banner {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
 
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>微信暗堡<span>apk安卓</span></h3>
-								<p>版本8.025，激活成功无需设置直接可以查看金额，安卓手机安装，苹果手机需要安装云手机然后用云手机再安装</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								<a href="https://deb.httg.top/mp4/ab.mp4" class="am-btn am-btn-primary am-btn-xs">视频教程</a>
-								<a href="https://deb.httg.top/apk/an.apk" class="am-btn am-btn-danger am-btn-xs">下载</a>
-								</div>
-						<li>
-					<li>
-               					 <div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/vx.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>安卓牛牛微商 <span>apk</span></h3>
-								<p>强大的微商营销工具，微商必备，内附各种强大功能</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-								<a href="https://wx.httg.top/az" class="am-btn am-btn-danger am-btn-xs">进入</a>
-						</div>					
-					</ul>	
-				</div>
-				<div class="am-tab-panel">
-					<ul class="am-list"> -->
-						<!-- 陌陌 		
-					<li>
+        .banner img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
 
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/mm.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>陌陌单透<span>免越狱</span></h3>
-								<p>陌陌单透，支持单雷，多雷玩法，不支持15系统及以上系统手机，不支持越狱手机,未签证书，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-							<a href="itms-services://?action=download-manifest&url=https://ipa.cydiabwcx.cc/plist/mmt.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-								</div>
-						<li>
-					<li>
-               					 <div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/mm.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>陌陌秒 <span>免越狱</span></h3>
-								<p>陌陌秒抢，不支持15系统及以上系统手机，支持越狱手机,未签证书，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-								<a href="itms-services://?action=download-manifest&amp;url=https://ipa.cydiabwcx.cc/plist/mmm.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
+        /* 滚动公告 */
+        .notice {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
 
-		
-						</div>					
-					</ul>	
-				</div>
-				<div class="am-tab-panel">
-					<ul class="am-list">-->
-						<!-- 企业 -->		
-					<li>
+        .notice marquee {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
 
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/qy.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>企业秒<span>免越狱</span></h3>
-								<p>企业微信秒抢，可设置延迟，摇一摇出现功能，支持任何群,未签证书，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-							<a href="itms-services://?action=download-manifest&url=https://ipa.cydiabwcx.cc/plist/qy.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
+        /* 导航标签 */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
 
-		
-						</div>					
-					</ul>	
-				</div>
-				<div class="am-tab-panel">
-					<ul class="am-list">
-						<!-- 风行 	
-					<li>
+        .tab {
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
 
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/jxt.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>惊喜淘<span>秒</span></h3>
-								<p>苹果风行系列：秒-打包-赔付-爆粉-群发 功能齐全，未签证书，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-							<a href="itms-services://?action=download-manifest&url=https://ipa.cydiabwcx.cc/plist/jxt.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>		
-						</div>					
-					</ul>	
-				</div>
-				<div class="am-tab-panel">
-					<ul class="am-list">-->	
-						<!-- 极速系列 		
-					<li>
+        .tab:hover, .tab.active {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.3);
+        }
 
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/yjwp.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>有家旺铺JSM<span>秒</span></h3>
-								<p>苹果极速系列：秒-打包-赔付-爆粉-群发 功能齐全，未签证书，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-							<a href="itms-services://?action=download-manifest&url=https://ipa.cydiabwcx.cc/plist/yjwp.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-							
-							<!-- 第一个 
+        /* 应用列表 */
+        .app-list {
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
 
-							<li>
+        .app-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
 
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/mxx.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>木夕夕JSM<span>秒</span></h3>
-								<p>苹果极速系列：秒-打包-赔付-爆粉-群发 功能齐全，未签证书，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-							<a href="itms-services://?action=download-manifest&url=https://ipa.cydiabwcx.cc/plist/mxx.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-							<!-- 第一个 
-						       <li>
+        .app-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
 
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/CNB.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>创南北JSM<span>秒</span></h3>
-								<p>苹果极速系列：秒-打包-赔付-爆粉-群发 功能齐全，未签证书，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-							<a href="itms-services://?action=download-manifest&url=https://ipa.cydiabwcx.cc/plist/CNBJSM.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>
-							<!-- 第一个 
-							<li>
+        .app-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
 
-							<div class="am-u-sm-2 am-padding-0 list-img">
-								<img src="index_files/dxk.png"/>
-							</div>
-							<div class="am-u-sm-7 list-info">
-								<h3>达信酷JSM<span>秒</span></h3>
-								<p>苹果极速系列：秒-打包-赔付-爆粉-群发 功能齐全，未签证书，越狱安装需要安装关闭签名插件：cydia添加源：http://apt.r7b.cn，免越狱需要自签udid</p>
-								<p><a href="javascript:;" data-am-modal="{target: '#popup-chiji'}">详情介绍</a></p>
-							</div>
-							<div class="am-u-sm-3 list-btn">
-								
-							<a href="itms-services://?action=download-manifest&url=https://ipa.cydiabwcx.cc/plist/dxk.plist" class="am-btn am-btn-danger am-btn-xs">下载</a>-->
+        .app-info {
+            flex: 1;
+        }
 
+        .app-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            margin-bottom: 5px;
+        }
 
-	</div>
-	</div>
-<div id="ios-weixin-tip" class="download">
-	<img src="index_files/ios.png" alt="">
-</div>
-<!-- 第一个 -->
-<div class="am-modal am-modal-alert" tabindex="-1" id="popup-chiji">
-	<div class="am-modal-dialog">
-		<div class="am-modal-hd">CydiaBwcx</div>
-		<div class="am-modal-bd">
-			<p>永久更新地址请牢记</p>
-			<p>稳定更新 已运行五年</p>
-		</div>
-		<div class="am-modal-footer">
-			<span class="am-modal-btn">确定</span>
-		</div>
-	</div>
-</div>
-<!-- 第二个 -->
-<div class="am-modal am-modal-alert" tabindex="-1" id="popup-chiji1">
-	<div class="am-modal-dialog">
-		<div class="am-modal-hd">CydiaBwcx</div>
-		<div class="am-modal-bd">
-			<p>永久更新地址请牢记</p>
-			<p>稳定更新 已运行五年</p>
-		</div>
-		<div class="am-modal-footer">
-			<span class="am-modal-btn">确定</span>
-		</div>
-	</div>
-</div>			
-<div class="h-foot">
-	<p  class="am-text-center">Copyright 2018. All rights reserved.</p>
+        .app-category {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
 
-<script src="index_files/jquery.min.js"></script>
-<script src="index_files/amazeui.min.js"></script>
-<script src="index_files/app.js"></script>
-<script>
-	$(function() {
-		$('#doc-my-tabs').tabs();
-	})
-</script>
+        .app-description {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        }
 
-<!--禁止右键代码-->
-  <script>
-    document.oncontextmenu = new Function("event.returnValue=false;"); //禁止右键功能
-    document.onkeydown = MM_KeyPress;
+        .app-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
-    function MM_KeyPress(num)
-    {
-      //防止系统退格键
-      var keycode = event.keyCode;
-      if (keycode == 8) //屏蔽退格健
-      {
-        event.keyCode = 0;
-        return;
-      }
-      if (keycode >= 122 && keycode <= 123) //屏蔽f12功能键
-      {
-        event.keyCode = 0;
-        event.returnValue = false;
-        return;
-      }
-    }
-  </script>
-  <script>
-    function fuckyou()
-    {
-      window.close(); //关闭当前窗口(防抽)
-      window.location = "about:blank"; //将当前窗口跳转置空白页
-    }
+        .app-btn {
+            padding: 8px 16px;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            white-space: nowrap;
+        }
 
-    function ck()
-    {
-      console.profile();
-      console.profileEnd();
-      //我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！
-      if (console.clear)
-      {
-        console.clear()
-      };
-      if (typeof console.profiles == "object")
-      {
-        return console.profiles.length > 0;
-      }
-    }
+        .app-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
 
-    function hehe()
-    {
-      if ((window.console && (console.firebug || console.table && /firebug/i.test(console.table()))) || (typeof opera == 'object' && typeof opera.postError == 'function' && console.profile.length > 0))
-      {
-        fuckyou();
-      }
-      if (typeof console.profiles == "object" && console.profiles.length > 0)
-      {
-        fuckyou();
-      }
-    }
-    hehe();
-    window.onresize = function()
-    {
-      if ((window.outerHeight - window.innerHeight) > 200)
-        //判断当前窗口内页高度和窗口高度，如果差值大于200，那么呵呵
-        fuckyou();
-    }
-  </script>
-<html>
-	
+        .app-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
 
-<script src="index_files/amazeui.min.js"></script>
-<script src="index_files/app.js"></script>
-<script>
-	$(function() {
-		$('#doc-my-tabs').tabs();
-	})
-</script>
+        .app-btn:hover:before {
+            left: 100%;
+        }
 
-<!--禁止右键代码-->
-  <script>
-    document.oncontextmenu = new Function("event.returnValue=false;"); //禁止右键功能
-    document.onkeydown = MM_KeyPress;
+        .app-btn.primary {
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+        }
 
-    function MM_KeyPress(num)
-    {
-      //防止系统退格键
-      var keycode = event.keyCode;
-      if (keycode == 8) //屏蔽退格健
-      {
-        event.keyCode = 0;
-        return;
-      }
-      if (keycode >= 122 && keycode <= 123) //屏蔽f12功能键
-      {
-        event.keyCode = 0;
-        event.returnValue = false;
-        return;
-      }
-    }
-  </script>
-  <script>
-    function fuckyou()
-    {
-      window.close(); //关闭当前窗口(防抽)
-      window.location = "about:blank"; //将当前窗口跳转置空白页
-    }
+        .app-btn.secondary {
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+        }
 
-    function ck()
-    {
-      console.profile();
-      console.profileEnd();
-      //我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！
-      if (console.clear)
-      {
-        console.clear()
-      };
-      if (typeof console.profiles == "object")
-      {
-        return console.profiles.length > 0;
-      }
-    }
+        /* 动画效果 */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    function hehe()
-    {
-      if ((window.console && (console.firebug || console.table && /firebug/i.test(console.table()))) || (typeof opera == 'object' && typeof opera.postError == 'function' && console.profile.length > 0))
-      {
-        fuckyou();
-      }
-      if (typeof console.profiles == "object" && console.profiles.length > 0)
-      {
-        fuckyou();
-      }
-    }
-    hehe();
-    window.onresize = function()
-    {
-      if ((window.outerHeight - window.innerHeight) > 200)
-        //判断当前窗口内页高度和窗口高度，如果差值大于200，那么呵呵
-        fuckyou();
-    }
-  </script>
-<html>
-	
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .title {
+                font-size: 24px;
+            }
+            
+            .app-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .app-buttons {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .tabs {
+                justify-content: center;
+            }
+            
+            .tab {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+
+        /* 特殊效果 */
+        .sparkle {
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <!-- 浮动粒子背景 -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <!-- 标题区域 -->
+        <div class="header">
+            <h1 class="title">✨ CydiaBwcx 梦幻世界 ✨</h1>
+            <p class="subtitle">~ 在星光中遇见科技的魅力 ~</p>
+        </div>
+
+        <!-- 横幅图片 -->
+        <div class="banner">
+            <img src="index_files/banner.jpg" alt="横幅图片">
+        </div>
+
+        <!-- 滚动公告 -->
+        <div class="notice">
+            <marquee behavior="" direction="">🌸 仅供交流学习使用 软件使用责任自行承担，2024，10，13号更新 🌸</marquee>
+        </div>
+
+        <!-- 导航标签 -->
+        <div class="tabs">
+            <a href="#" class="tab active">💫 越狱专区</a>
+            <a href="#" class="tab">🌙 双号分身</a>
+            <a href="#" class="tab">🤖 机器人类</a>
+            <a href="#" class="tab">📱 钉钉系列</a>
+            <a href="#" class="tab">💰 支付宝类</a>
+            <a href="#" class="tab">🏢 企业系列</a>
+        </div>
+
+        <!-- 应用列表 -->
+        <div class="app-list">
+            <!-- 全功能展示图 -->
+            <div class="app-item">
+                <img src="index_files/vx.png" alt="微信" class="app-icon">
+                <div class="app-info">
+                    <div class="app-title">🌺 全功能展示图</div>
+                    <div class="app-category">双号系列</div>
+                    <div class="app-description">全功能展示图-双号系列</div>
+                </div>
+                <div class="app-buttons">
+                    <a href="/zs" class="app-btn primary">✨ 查看</a>
+                </div>
+            </div>
+
+            <!-- iPad扫码登录插件 -->
+            <div class="app-item">
+                <img src="index_files/vx.png" alt="微信" class="app-icon">
+                <div class="app-info">
+                    <div class="app-title">🌙 iPad扫码登录插件</div>
+                    <div class="app-category">越狱系列</div>
+                    <div class="app-description">部分低系统无法登陆历史版本微信，又安装8.0.49版本分身闪退的，可以安装个ipad扫码登录插件，打开微信扫码登录，扫码后不要点登陆，点取消，然后再账号密码登陆，低版本就可以上去了</div>
+                </div>
+                <div class="app-buttons">
+                    <a href="./deb/ipad.deb" class="app-btn primary">💫 下载</a>
+                </div>
+            </div>
+
+            <!-- 越狱合集 -->
+            <div class="app-item">
+                <img src="index_files/yueyu.png" alt="越狱" class="app-icon">
+                <div class="app-info">
+                    <div class="app-title">🦄 越狱合集</div>
+                    <div class="app-category">越狱工具</div>
+                    <div class="app-description">越狱工具</div>
+                </div>
+                <div class="app-buttons">
+                    <a href="https://apt.r7b.cn/yueyu/" class="app-btn primary">🌟 下载</a>
+                </div>
+            </div>
+
+            <!-- 太极埋雷转包 -->
+            <div class="app-item">
+                <img src="http://ss.httg.top/cydiabwcx/图标/tj.png" alt="太极" class="app-icon">
+                <div class="app-info">
+                    <div class="app-title">🎭 太极埋雷转包</div>
+                    <div class="app-category">越狱</div>
+                    <div class="app-description">发包埋雷，分析导入埋雷数据，有转包功能，是否可用自行测试</div>
+                </div>
+                <div class="app-buttons">
+                    <a href="https://m.miaopai.com/show/channel/8BMpG7SJ-cDYhgQbEb1mZrX-ivHaTHVFy0tqCw__?UniversalLinks=callback" class="app-btn secondary">🎬 视频</a>
+                    <a href="http://ss.httg.top/cydiabwcx/deb/tjml.deb" class="app-btn primary">💎 下载</a>
+                </div>
+            </div>
+
+            <!-- 雷群霸主 -->
+            <div class="app-item">
+                <img src="http://ss.httg.top/cydiabwcx/图标/lqbz.png" alt="雷群霸主" class="app-icon">
+                <div class="app-info">
+                    <div class="app-title">⚡ 雷群霸主</div>
+                    <div class="app-category">越狱</div>
+                    <div class="app-description">豹子半截图，修改红包金额，发包埋雷，分析导入埋雷数据</div>
+                </div>
+                <div class="app-buttons">
+                    <a href="https://m.miaopai.com/show/channel/8BMpG7SJ-cDYhgQbEb1mZrX-ivHaTHVFy0tqCw__?UniversalLinks=callback" class="app-btn secondary">🎬 视频</a>
+                    <a href="http://ss.httg.top/cydiabwcx/deb/lqbz.deb" class="app-btn primary">💫 下载</a>
+                </div>
+            </div>
+
+            <!-- 无名9.99私用 -->
+            <div class="app-item">
+                <img src="index_files/wuming.png" alt="无名" class="app-icon">
+                <div class="app-info">
+                    <div class="app-title">🌸 无名9.99私用</div>
+                    <div class="app-category">越狱</div>
+                    <div class="app-description">重磅归来，不限制系统</div>
+                </div>
+                <div class="app-buttons">
+                    <a href="https://m.miaopai.com/show/channel/8BMpG7SJ-cDYhgQbEb1mZrX-ivHaTHVFy0tqCw__?UniversalLinks=callback" class="app-btn secondary">🎬 视频</a>
+                    <a href="http://wm.r7b.cn:8/deb/无名.deb" class="app-btn primary">🌺 无名999极速版</a>
+                </div>
+            </div>
+
+            <!-- 包包干3.0极速版 -->
+            <div class="app-item">
+                <img src="index_files/bbg.png" alt="包包干" class="app-icon">
+                <div class="app-info">
+                    <div class="app-title">🎀 新-包包干3.0极速版(内置防封)</div>
+                    <div class="app-category">越狱</div>
+                    <div class="app-description">修复13系统闪退，更新主微信支持高版本，分身也支持测试8.02版本没问题，据说支持到8.027需自行测试</div>
+                </div>
+                <div class="app-buttons">
+                    <a href="https://m.miaopai.com/show/channel/8BMpG7SJ-cDYhgQbEb1mZrX-ivHaTHVFy0tqCw__?UniversalLinks=callback" class="app-btn secondary">🎬 视频</a>
+                    <a href="http://bb.r7b.cn:8/deb/3.0极速版.deb" class="app-btn primary">💖 支持13系统</a>
+                    <a href="http://bb.r7b.cn:8/deb/新包包干高版本.deb" class="app-btn primary">🌟 主微信支持高版本</a>
+                </div>
+            </div>
+
+            <!-- 风行·蝙蝠侠4.0 -->
+            <div class="app-item">
+                <img src="index_files/bfx.png" alt="蝙蝠侠" class="app-icon">
+                <div class="app-info">
+                    <div class="app-title">🦇 风行·蝙蝠侠4.0</div>
+                    <div class="app-category">越狱</div>
+                    <div class="app-description">10系统以上必须使用u盘越狱</div>
+                </div>
+                <div class="app-buttons">
+                    <a href="https://m.miaopai.com/show/channel/8BMpG7SJ-cDYhgQbEb1mZrX-ivHaTHVFy0tqCw__?UniversalLinks=callback" class="app-btn secondary">🎬 视频</a>
+                    <a href="http://bfx.bb.r7b.cn:8/deb/风行.deb" class="app-btn primary">🌙 下载</a>
+                </div>
+            </div>
+
+            <!-- CydiaBwcx助手 -->
+            <div class="app-item">
+                <img src="index_files/vx.png" alt="微信" class="app-icon">
+                <div class="app-info">
+                    <div class="app-title">💎 CydiaBwcx助手</div>
+                    <div class="app-category">免授权</div>
+                    <div class="app-description">源码源包编译，适配8.013版本微信，内附锁屏抢红包功能，好友关系检测，消息防撤回，修改运动步数，小游戏作弊，朋友圈转发，朋友圈集赞</div>
+                </div>
+                <div class="app-buttons">
+                    <a href="itms-services://?action=download-manifest&url=https://pan.r7b.cn/i/aHR0cHM6Ly9wYW4uY3lkaWFid2N4LmNjL2QvJUU3JUE2JThGJUU1JTg4JUE5L2N5ZGlhYndjeC5pcGE-/ipa.plist" class="app-btn primary">✨ 下载</a>
+                </div>
+            </div>
+
+            <!-- 摩天轮 -->
+            <div class="app-item">
+                <img src="index_files/vx.png" alt="微信" class="app-icon">
+                <div class="app-info">
+                    <div class="app-title">🎡 摩天轮</div>
+                    <div class="app-category">免授权</div>
+                    <div class="app-description">微信版本8.018版本，安装打开如果提示输入验证，任意输入回车后马上点登陆，然后登陆上去划后台后如果提示验证失败，再重新划后台打开即可</div>
+                </div>
+                <div class="app-buttons">
+                    <a href="https://cs.httg.top/mtl/mtl.mp4" class="app-btn secondary">🎬 视频教程</a>
+                    <a href="itms-services://?action=download-manifest&url=https://pan.r7b.cn/i/aHR0cHM6Ly9wYW4uY3lkaWFid2N4LmNjL2QvJUU3JUE2JThGJUU1JTg4JUE5L210bC5pcGE-/ipa.plist" class="app-btn primary">🌸 下载</a>
+                </div>
+            </div>
+
+            <!-- 独角兽2.0 -->
+            <div class="app-item">
+                <img src="index_files/vx.png" alt="微信" class="app-icon">
+                <div class="app-info">
+                    <div class="app-title">🦄 独角兽2.0</div>
+                    <div class="app-category">免授权</div>
+                    <div class="app-description">微信版本8.018版本，安装打开会提示验证中，然后会转圈，等他验证完，转完圈后再点确认，否则破解不成功</div>
+                </div>
+                <div class="app-buttons">
+                    <a href="itms-services://?action=download-manifest&url=https://pan.r7b.cn/i/aHR0cHM6Ly9wYW4uY3lkaWFid2N4LmNjL2QvJUU3JUE2JThGJUU1JTg4JUE5L2Rqcy5pcGE-/ipa.plist" class="app-btn primary">💫 下载</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * 创建浮动粒子效果
+         */
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        /**
+         * 标签切换功能
+         */
+        function initTabs() {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 移除所有活动状态
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // 添加当前活动状态
+                    this.classList.add('active');
+                    
+                    // 这里可以添加切换内容的逻辑
+                    console.log('切换到标签:', this.textContent);
+                });
+            });
+        }
+
+        /**
+         * 页面初始化
+         */
+        function init() {
+            // 创建粒子效果
+            createParticles();
+            
+            // 初始化标签功能
+            initTabs();
+            
+            console.log('✨ CydiaBwcx 梦幻世界已初始化 ✨');
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
